@@ -5,7 +5,7 @@ const INIT_STATE = {
   selectedCountries: [],
 };
 
-export default (state = INIT_STATE, action) => {
+ const Countries = (state = INIT_STATE, action) => {
   switch (action.type) {
     case GET_COUNTRIES_LIST: {
       return {...state, countriesList: action.payload};
@@ -34,3 +34,5 @@ export default (state = INIT_STATE, action) => {
       return state;
   }
 };
+
+ export default Countries;
