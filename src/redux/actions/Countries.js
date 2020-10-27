@@ -17,7 +17,6 @@ export const onSetSelectedData = (isChecked, country, city) => {
     let list = [...selectedCountries];
     let selectedCountry = selectedCountries.find(item => item.id === country.id);
     let countryItem =  selectedCountry ? {id: selectedCountry.id, name: selectedCountry.name, cities: selectedCountry.cities} : null;
-    console.log("countryItem", countryItem);
     if (isChecked) {
       if (countryItem) {
         countryItem.cities = countryItem.cities.concat(city);
