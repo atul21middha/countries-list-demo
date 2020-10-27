@@ -10,9 +10,6 @@ const INIT_STATE = {
     case GET_COUNTRIES_LIST: {
       return {...state, countriesList: action.payload};
     }
-    case DELETE_COUNTRY: {
-      return {...state, countriesList: state.countriesList};
-    }
     case SET_SELECTED_DATA: {
       return {
         ...state,
