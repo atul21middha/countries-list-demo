@@ -20,15 +20,8 @@ const INIT_STATE = {
       };
     }
     case REMOVE_SELECTED_CITY: {
-      let updatedList = [...state.selectedCountries];
-      let country = updatedList.find(item => item.id === action.payload.countryId);
-      country.cities = country.cities.filter(item => item.id !== action.payload.cityId);
-      if(country.cities.length > 0 ){
-        updatedList = updatedList.map(item => item.id === country.id ? country : item);
-      } else {
-        updatedList = updatedList.filter(item => item.id !== country.id)
-      }
-      return {...state, selectedCountries: updatedList};
+
+      return {...state, selectedCountries: action.payload};
     }
     default:
       return state;

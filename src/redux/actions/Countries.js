@@ -38,7 +38,16 @@ export const onSetSelectedData = (isChecked, country, city) => {
 };
 
 export const onRemoveCityFrmSelected = (countryId, cityId) => {
-  return dispatch => {
-    dispatch({type: REMOVE_SELECTED_CITY, payload: {countryId, cityId}})
+  return (dispatch, getState) => {
+    const {selectedCountries} = getState().countries;
+    let updatedList = [...selectedCountries];
+    let country = updatedList.find(item => item.id === countryId);
+    country.cities = country.cities.filter(item => item.id !== cityId);
+    if(country.cities.length > 0 ){
+      updatedList = updatedList.map(item => item.id === country.id ? country : item);
+    } else {
+      updatedList = updatedList.filter(item => item.id !== country.id)
+    }
+    dispatch({type: REMOVE_SELECTED_CITY, payload: updatedList})
   }
 };
