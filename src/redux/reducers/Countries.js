@@ -1,4 +1,4 @@
-import {DELETE_COUNTRY, GET_COUNTRIES_LIST, REMOVE_SELECTED_CITY, SET_SELECTED_DATA} from "../ActionTypes";
+import {GET_COUNTRIES_LIST, REMOVE_SELECTED_CITY, SET_SELECTED_DATA} from "../ActionTypes";
 
 const INIT_STATE = {
   countriesList: [],
